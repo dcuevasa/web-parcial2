@@ -4,7 +4,7 @@ import { BonoEntity } from 'src/bono/bono.entity/bono.entity';
 @Entity()
 export class UsuarioEntity {
     @PrimaryGeneratedColumn("uuid")
-    id: Long;
+    id: string;
 
     @Column()
     cedula: number;

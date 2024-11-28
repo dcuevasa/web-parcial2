@@ -6,13 +6,13 @@ import { UsuarioEntity } from "src/usuario/usuario.entity/usuario.entity";
 export class BonoEntity {
 
     @PrimaryGeneratedColumn("uuid")
-    id: Long;
+    id: string;
 
     @Column()
     monto: number;
 
     @Column()
-    calificacion: Double;
+    calificacion: number;
 
     @Column()
     palabra_clave: string;

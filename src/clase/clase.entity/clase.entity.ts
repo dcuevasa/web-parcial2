@@ -5,7 +5,7 @@ import { BonoEntity } from "src/bono/bono.entity/bono.entity";
 export class ClaseEntity {
 
     @PrimaryGeneratedColumn("uuid")
-    id: Long;
+    id: string;
 
     @Column()
     nombre: string;
