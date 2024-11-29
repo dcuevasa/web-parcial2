@@ -15,6 +15,13 @@ export class UsuarioBonoService {
         private readonly bonoRepository: Repository<BonoEntity>
     ){}
 
+    async findBonosByUsuario(userId: string): Promise<BonoEntity[]> {
+        const usuario: UsuarioEntity = await this.usuarioRepository.findOne({where: {id: userId}, relations: ['bonos']});
+        if (!usuario) {
+            throw new Error(`Usuario con id ${userId} no encontrado`);
+        }
+        return usuario.bonos;
+    }
 
     
 }
