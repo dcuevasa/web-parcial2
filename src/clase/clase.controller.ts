@@ -3,8 +3,10 @@ import { plainToInstance } from 'class-transformer';
 import { ClaseService } from './clase.service';
 import { ClaseEntity } from './clase.entity/clase.entity';
 import { ClaseDto } from './clase.dto/clase.dto';
+import { BusinessErrorsInterceptor } from '../shared/interceptors/business-errors/business-errors.interceptor';
 
 @Controller('clase')
+@UseInterceptors(BusinessErrorsInterceptor)
 export class ClaseController {
     constructor(private readonly bonoService: ClaseService) {}
 

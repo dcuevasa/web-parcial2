@@ -3,8 +3,10 @@ import { plainToInstance } from 'class-transformer';
 import { UsuarioService } from './usuario.service';
 import { UsuarioEntity } from './usuario.entity/usuario.entity';
 import { UsuarioDto } from './usuario.dto/usuario.dto';
+import { BusinessErrorsInterceptor } from '../shared/interceptors/business-errors/business-errors.interceptor';
 
 @Controller('usuario')
+@UseInterceptors(BusinessErrorsInterceptor)
 export class UsuarioController {
     constructor(private readonly bonoService: UsuarioService) {}
 

@@ -7,6 +7,9 @@ import { BonoModule } from './bono/bono.module';
 import { ClaseBonoModule } from './clase-bono/clase-bono.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsuarioBonoModule } from './usuario-bono/usuario-bono.module';
+import { UsuarioEntity } from './usuario/usuario.entity/usuario.entity';
+import { ClaseEntity } from './clase/clase.entity/clase.entity';
+import { BonoEntity } from './bono/bono.entity/bono.entity';
 
 @Module({
   imports: [
@@ -14,6 +17,7 @@ import { UsuarioBonoModule } from './usuario-bono/usuario-bono.module';
     ClaseModule,
     BonoModule,
     ClaseBonoModule,
+    UsuarioBonoModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
@@ -22,17 +26,14 @@ import { UsuarioBonoModule } from './usuario-bono/usuario-bono.module';
       password: 'postgres',
       database: 'parcial2',
       entities: [
-        UsuarioModule,
-        ClaseModule,
-        BonoModule,
-        ClaseBonoModule,
-        UsuarioBonoModule
+        UsuarioEntity,
+        ClaseEntity,
+        BonoEntity,
       ],
       dropSchema: true,
       synchronize: true,
       keepConnectionAlive: true,
     }),
-    UsuarioBonoModule,
   ],
   controllers: [AppController],
   providers: [AppService],
