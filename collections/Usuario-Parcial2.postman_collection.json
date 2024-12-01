@@ -1,0 +1,976 @@
+{
+	"info": {
+		"_postman_id": "f8672faf-9d34-4139-91a8-f97a988d5898",
+		"name": "Usuario-Parcial2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25935145"
+	},
+	"item": [
+		{
+			"name": "Add an usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.globals.set(\"usuario_id\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cedula\": 1234567890,\r\n    \"nombre\": \"John Doe\",\r\n    \"grupo_investigacion\": \"IMAGINE\",\r\n    \"numero_extension\": 1234,\r\n    \"rol\": \"Profesor\",\r\n    \"jefe\": \"Jane Smith\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/usuario",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"usuario"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add an usuario",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cedula\": 1234567890,\r\n    \"nombre\": \"John Doe\",\r\n    \"grupo_investigacion\": \"IMAGINE\",\r\n    \"numero_extension\": 1234,\r\n    \"rol\": \"Profesor\",\r\n    \"jefe\": \"Jane Smith\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/usuario",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuario"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "178"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b2-7LnfCEIp9R5O5z5AEutY7C5u9Gk\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Nov 2024 22:56:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"cedula\": 1234567890,\n    \"nombre\": \"John Doe\",\n    \"grupo_investigacion\": \"IMAGINE\",\n    \"numero_extension\": 1234,\n    \"rol\": \"Profesor\",\n    \"jefe\": \"Jane Smith\",\n    \"id\": \"6e0c7c28-d1f7-4778-ba7d-c5932b402483\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add an usuario with bonos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.globals.set(\"usuario_id\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cedula\": 1234567890,\r\n    \"nombre\": \"John Doe\",\r\n    \"grupo_investigacion\": \"IMAGINE\",\r\n    \"numero_extension\": 1234,\r\n    \"rol\": \"Profesor\",\r\n    \"jefe\": \"Jane Smith\",\r\n    \"bonos\": [\r\n        {\r\n            \"monto\": 100,\r\n            \"calificacion\": 5,\r\n            \"palabra_clave\": \"example\",\r\n            \"usuario\": {\r\n                \"id\": \"31e5c609-22d4-4e4f-aaa1-782b4c85f982\",\r\n                \"rol\": \"Profesor\"\r\n            },\r\n            \"id\": \"bfee51eb-eb80-4374-8e64-57c731bd4eda\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/usuario",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"usuario"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add an usuario",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cedula\": 1234567890,\r\n    \"nombre\": \"John Doe\",\r\n    \"grupo_investigacion\": \"IMAGINE\",\r\n    \"numero_extension\": 1234,\r\n    \"rol\": \"Profesor\",\r\n    \"jefe\": \"Jane Smith\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/usuario",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuario"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "178"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b2-7LnfCEIp9R5O5z5AEutY7C5u9Gk\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Nov 2024 22:56:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"cedula\": 1234567890,\n    \"nombre\": \"John Doe\",\n    \"grupo_investigacion\": \"IMAGINE\",\n    \"numero_extension\": 1234,\n    \"rol\": \"Profesor\",\n    \"jefe\": \"Jane Smith\",\n    \"id\": \"6e0c7c28-d1f7-4778-ba7d-c5932b402483\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add an usuario (rol==Decana)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.globals.set(\"usuario_id\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cedula\": 1234567890,\r\n    \"nombre\": \"John Doe\",\r\n    \"grupo_investigacion\": \"IMAGINE\",\r\n    \"numero_extension\": 1234,\r\n    \"rol\": \"Decana\",\r\n    \"jefe\": \"Jane Smith\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/usuario",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"usuario"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add an usuario Copy",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cedula\": 1234567890,\r\n    \"nombre\": \"John Doe\",\r\n    \"grupo_investigacion\": \"IMAGINE\",\r\n    \"numero_extension\": 1234,\r\n    \"rol\": \"Decana\",\r\n    \"jefe\": \"Jane Smith\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/usuario",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuario"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "176"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b0-4qsj614x1/tvzQBD1H6D634ESBo\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Nov 2024 23:00:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"cedula\": 1234567890,\n    \"nombre\": \"John Doe\",\n    \"grupo_investigacion\": \"IMAGINE\",\n    \"numero_extension\": 1234,\n    \"rol\": \"Decana\",\n    \"jefe\": \"Jane Smith\",\n    \"id\": \"0b14787e-8051-466b-bec3-19035d741272\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add an invalid usuario (bad grupo_investigacion)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"   pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"El grupo de investigacion FLAG no es valido\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cedula\": 1234567890,\r\n    \"nombre\": \"John Doe\",\r\n    \"grupo_investigacion\": \"FLAG\",\r\n    \"numero_extension\": 1234,\r\n    \"rol\": \"Profesor\",\r\n    \"jefe\": \"Jane Smith\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/usuario",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"usuario"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add an usuario Copy",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cedula\": 1234567890,\r\n    \"nombre\": \"John Doe\",\r\n    \"grupo_investigacion\": \"FLAG\",\r\n    \"numero_extension\": 1234,\r\n    \"rol\": \"Profesor\",\r\n    \"jefe\": \"Jane Smith\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/usuario",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuario"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "74"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4a-S8ZL24K19iEY/MDvuEtVeNF9L3o\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Nov 2024 22:58:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 400,\n    \"message\": \"El grupo de investigacion FLAG no es valido\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get one usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/usuario/6e0c7c28-d1f7-4778-ba7d-c5932b402483",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"usuario",
+						"6e0c7c28-d1f7-4778-ba7d-c5932b402483"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get one usuario",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/usuario/6e0c7c28-d1f7-4778-ba7d-c5932b402483",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuario",
+								"6e0c7c28-d1f7-4778-ba7d-c5932b402483"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "189"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"bd-C1Fo4BFoVuRN8JILxIKSl3gpwWQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Nov 2024 22:56:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"6e0c7c28-d1f7-4778-ba7d-c5932b402483\",\n    \"cedula\": 1234567890,\n    \"nombre\": \"John Doe\",\n    \"grupo_investigacion\": \"IMAGINE\",\n    \"numero_extension\": 1234,\n    \"rol\": \"Profesor\",\n    \"jefe\": \"Jane Smith\",\n    \"bonos\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Get an invalid usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"Usuario con id 00000000-0000-0000-0000-000000000000 no encontrado\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/usuario/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"usuario",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get an invalid usuario",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/usuario/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuario",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "96"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"60-DPRT9HDtv6++jXvQYr7xMIlnO7Q\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Nov 2024 22:56:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Usuario con id 00000000-0000-0000-0000-000000000000 no encontrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete an usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/usuario/6e0c7c28-d1f7-4778-ba7d-c5932b402483",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"usuario",
+						"6e0c7c28-d1f7-4778-ba7d-c5932b402483"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete an usuario",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/usuario/6e0c7c28-d1f7-4778-ba7d-c5932b402483",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuario",
+								"6e0c7c28-d1f7-4778-ba7d-c5932b402483"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Nov 2024 22:56:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Delete an invalid usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"Usuario con id 00000000-0000-0000-0000-000000000000 no encontrado\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/usuario/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"usuario",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete an usuario",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/usuario/6e0c7c28-d1f7-4778-ba7d-c5932b402483",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuario",
+								"6e0c7c28-d1f7-4778-ba7d-c5932b402483"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Nov 2024 22:56:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Delete an invalid usuario (rol==decana)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 412\", function () {\r",
+							"   pm.response.to.have.status(412);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"No se puede eliminar a la decana\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/usuario/0b14787e-8051-466b-bec3-19035d741272",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"usuario",
+						"0b14787e-8051-466b-bec3-19035d741272"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete an invalid usuario (rol==decana)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/usuario/0b14787e-8051-466b-bec3-19035d741272",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuario",
+								"0b14787e-8051-466b-bec3-19035d741272"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3f-mRa9i9AEp7quJGtIiik2ichUz0w\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Nov 2024 23:00:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 412,\n    \"message\": \"No se puede eliminar a la decana\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete an invalid usuario (has bonos)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 412\", function () {\r",
+							"   pm.response.to.have.status(412);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"No se puede eliminar a un usuario con bonos\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/usuario/24de40fa-2b20-4e60-a8c9-0b3d7a212210",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"usuario",
+						"24de40fa-2b20-4e60-a8c9-0b3d7a212210"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete an invalid usuario (has bonos)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/usuario/24de40fa-2b20-4e60-a8c9-0b3d7a212210",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuario",
+								"24de40fa-2b20-4e60-a8c9-0b3d7a212210"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "74"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4a-cK7HtpuUyV3SHhDpqioKlrLhqio\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Nov 2024 23:03:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 412,\n    \"message\": \"No se puede eliminar a un usuario con bonos\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:3000/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "usuario_id",
+			"value": "0",
+			"type": "string"
+		}
+	]
+}

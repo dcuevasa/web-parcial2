@@ -1,0 +1,811 @@
+{
+	"info": {
+		"_postman_id": "dacf7709-31e1-4651-b5b9-0e801cd4286c",
+		"name": "Bono-Parcial2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25935145"
+	},
+	"item": [
+		{
+			"name": "Add a bono",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.globals.set(\"bono_id\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"monto\": 100,\r\n    \"calificacion\": 5,\r\n    \"palabra_clave\": \"example\",\r\n    \"usuario\": {\r\n        \"id\": \"31e5c609-22d4-4e4f-aaa1-782b4c85f982\",\r\n        \"rol\": \"Profesor\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/bono",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"bono"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add a bono",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"monto\": 100,\r\n    \"calificacion\": 5,\r\n    \"palabra_clave\": \"example\",\r\n    \"usuario\": {\r\n        \"id\": \"31e5c609-22d4-4e4f-aaa1-782b4c85f982\",\r\n        \"rol\": \"Profesor\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/bono",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"bono"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "173"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ad-ZlXHgn2ehDdiPLy09F8YGPpKrxQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Nov 2024 22:47:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"monto\": 100,\n    \"calificacion\": 5,\n    \"palabra_clave\": \"example\",\n    \"usuario\": {\n        \"id\": \"31e5c609-22d4-4e4f-aaa1-782b4c85f982\",\n        \"rol\": \"Profesor\"\n    },\n    \"id\": \"bfee51eb-eb80-4374-8e64-57c731bd4eda\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add a bono (note < 4)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()\r",
+							"pm.globals.set(\"bono_id\", data.id);\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"   pm.response.to.have.status(201);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"monto\": 100,\r\n    \"calificacion\": 3,\r\n    \"palabra_clave\": \"example\",\r\n    \"usuario\": {\r\n        \"id\": \"31e5c609-22d4-4e4f-aaa1-782b4c85f982\",\r\n        \"rol\": \"Profesor\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/bono",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"bono"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add a bono",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"monto\": 100,\r\n    \"calificacion\": 5,\r\n    \"palabra_clave\": \"example\",\r\n    \"usuario\": {\r\n        \"id\": \"31e5c609-22d4-4e4f-aaa1-782b4c85f982\",\r\n        \"rol\": \"Profesor\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/bono",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"bono"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "173"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ad-ZlXHgn2ehDdiPLy09F8YGPpKrxQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Nov 2024 22:47:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"monto\": 100,\n    \"calificacion\": 5,\n    \"palabra_clave\": \"example\",\n    \"usuario\": {\n        \"id\": \"31e5c609-22d4-4e4f-aaa1-782b4c85f982\",\n        \"rol\": \"Profesor\"\n    },\n    \"id\": \"bfee51eb-eb80-4374-8e64-57c731bd4eda\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add an invalid bono (empty monto)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"   pm.response.to.have.status(400);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"monto\": null,\r\n    \"calificacion\": 5,\r\n    \"palabra_clave\": \"example\",\r\n    \"usuario\": {\r\n        \"id\": \"0\",\r\n        \"rol\": \"Profesor\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/bono",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"bono"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add an invalid bono (empty monto)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"monto\": null,\r\n    \"calificacion\": 5,\r\n    \"palabra_clave\": \"example\",\r\n    \"usuario\": {\r\n        \"id\": \"0\",\r\n        \"rol\": \"Profesor\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/bono",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"bono"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "58"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3a-L9/SsTPGKSgbe5UdhmzkNGZCyeI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Nov 2024 22:49:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 400,\n    \"message\": \"El monto no puede ser vacio\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add an invalid bono (negative monto)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"   pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"monto\": -10,\r\n    \"calificacion\": 5,\r\n    \"palabra_clave\": \"example\",\r\n    \"usuario\": {\r\n        \"id\": \"0\",\r\n        \"rol\": \"Profesor\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/bono",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"bono"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add an invalid bono (negative monto)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"monto\": -10,\r\n    \"calificacion\": 5,\r\n    \"palabra_clave\": \"example\",\r\n    \"usuario\": {\r\n        \"id\": \"0\",\r\n        \"rol\": \"Profesor\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/bono",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"bono"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "57"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"39-eMLVQUpinwkJ4JHuZ4DGKP6K3rw\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Nov 2024 22:49:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 400,\n    \"message\": \"El monto debe ser positivo\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add an invalid bono (not a professor)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 412\", function () {\r",
+							"   pm.response.to.have.status(412);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"monto\": 10,\r\n    \"calificacion\": 5,\r\n    \"palabra_clave\": \"example\",\r\n    \"usuario\": {\r\n        \"id\": \"0\",\r\n        \"rol\": \"Decana\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/bono",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"bono"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add an invalid bono (not a professor)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"monto\": 10,\r\n    \"calificacion\": 5,\r\n    \"palabra_clave\": \"example\",\r\n    \"usuario\": {\r\n        \"id\": \"0\",\r\n        \"rol\": \"Decana\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/bono",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"bono"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3f-24/GfwgdzgI5m21Cg990rQNctoA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Nov 2024 22:49:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 412,\n    \"message\": \"El usuario no tiene rol profesor\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete a bono",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/bono/8dfd389e-e84d-45be-a5d0-f5e6c9f79486",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"bono",
+						"8dfd389e-e84d-45be-a5d0-f5e6c9f79486"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete a bono",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/bono/8dfd389e-e84d-45be-a5d0-f5e6c9f79486",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"bono",
+								"8dfd389e-e84d-45be-a5d0-f5e6c9f79486"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Nov 2024 22:52:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Delete a bono that can't be deleted (note>4)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 412\", function () {\r",
+							"   pm.response.to.have.status(412);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/bono/bfee51eb-eb80-4374-8e64-57c731bd4eda",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"bono",
+						"bfee51eb-eb80-4374-8e64-57c731bd4eda"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete a bono Copy",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/bono/bfee51eb-eb80-4374-8e64-57c731bd4eda",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"bono",
+								"bfee51eb-eb80-4374-8e64-57c731bd4eda"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "86"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"56-dzQKPmIBuJMMiSHbXMJGdtJ3xf0\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Nov 2024 22:50:54 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 412,\n    \"message\": \"No se puede eliminar un bono con calificacion mayor a 4\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete an invalid bono",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"   pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Get expected error message\", function () {\r",
+							"   var data = pm.response.json();\r",
+							"   pm.expect(data.message).to.eql(\"Bono con id 00000000-0000-0000-0000-000000000000 no encontrado\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/bono/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"bono",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete an invalid bono",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/bono/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"bono",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "93"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5d-HZ7SrNjH3PK2Giyl8hi9IUxNVJA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Nov 2024 22:49:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Bono con id 00000000-0000-0000-0000-000000000000 no encontrado\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:3000/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "bono_id",
+			"value": "0",
+			"type": "string"
+		}
+	]
+}
